@@ -36,7 +36,7 @@ format = "[@$hostname]($style) "
 [directory]
 truncation_length = 0
 truncate_to_repo = false
-home_symbol = "/Users/sisyphus_2"
+home_symbol = "~"
 style = "bold tokyo_cyan"
 format = "[$path]($style) "
 
