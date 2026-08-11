@@ -2,7 +2,7 @@
 
 # Keep the prompt informative without Powerline-style background blocks.
 add_newline = false
-format = "$conda$username$hostname$directory$git_branch$git_status$line_break$character"
+format = "$conda$username$hostname$directory$git_branch$git_commit$git_status$line_break$character"
 palette = "blue_velvet_tokyo_night"
 
 [palettes.blue_velvet_tokyo_night]
@@ -44,6 +44,13 @@ format = "[$path]($style) "
 symbol = " "
 style = "bold tokyo_purple"
 format = "[$symbol$branch]($style) "
+
+[git_commit]
+only_detached = false
+tag_disabled = false
+tag_symbol = "🏷 "
+format = "[$tag]($style) "
+style = "bold tokyo_teal"
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
