@@ -1,0 +1,29 @@
+# Clash Verge Rev 主题配置片段（提取自 macOS / v2.5.4）。
+# 保存 Nord 配色与跟随系统的主题模式；css_injection 为空表示没有自定义 CSS。
+# 本文件不会被 Clash 自动加载，也不是可从“订阅导入”导入的代理配置。
+#
+# 迁移到另一台 Mac / 应用本文件的修改：
+# 1. 安装并启动一次 Clash Verge Rev，生成配置后完全退出应用。
+# 2. 找到目标机器上的配置文件：
+#    ~/Library/Application Support/io.github.clash-verge-rev.clash-verge-rev/verge.yaml
+#    先将原文件备份到本仓库之外。
+# 3. 用本文件中的 theme_mode 和整个 theme_setting 段替换目标文件中的
+#    同名顶层字段（若不存在则添加），保留其他字段，注意 YAML 缩进。
+#    不要用本文件覆盖整个 verge.yaml，也不要将它软链接为 verge.yaml。
+# 4. 重新启动 Clash Verge Rev，检查主题外观。
+# Windows / Linux 的配置目录不同，请通过应用的配置目录入口定位 verge.yaml。
+#
+# 在应用界面调整主题后，需要将上述两个字段同步回本文件，再提交到 dotfiles。
+# 不要将订阅、代理配置、日志或其他运行状态一起放进仓库。
+theme_mode: system
+theme_setting:
+  primary_color: '#88C0D0'
+  secondary_color: '#81A1C1'
+  primary_text: null
+  secondary_text: null
+  info_color: '#88C0D0'
+  error_color: '#BF616A'
+  warning_color: '#EBCB8B'
+  success_color: '#A3BE8C'
+  font_family: null
+  css_injection: ''
