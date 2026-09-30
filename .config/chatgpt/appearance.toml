@@ -1,0 +1,65 @@
+# ChatGPT macOS app 外观配置片段（Codex 界面）。
+# 保存当前深色/浅色主题、语义颜色、字体和字号；不是完整的 Codex 配置。
+# 本文件是可迁移的来源/备份，不会被应用自动加载。
+#
+# 迁移 / 恢复方法：
+# 1. 安装 JetBrains Mono，确保包含 Regular 字重。
+# 2. 完全退出 ChatGPT app，备份目标机器的 $CODEX_HOME/config.toml
+#    （CODEX_HOME 未设置时为 ~/.codex/config.toml）。
+# 3. 将本文件 [desktop] 中的设置逐项合并到目标配置已有的 [desktop]，
+#    并用本文件的 appearanceDarkChromeTheme / appearanceLightChromeTheme
+#    表及其子表替换目标中的同名主题表。不要追加重复的 [desktop] 表。
+# 4. 保留模型、项目、权限、MCP 等其他设置；不要覆盖或软链接整个 config.toml。
+# 5. 启动应用，检查深色/浅色主题及 JetBrains Mono Regular 的显示。
+#
+# 在应用中调整外观后，将相关设置同步回本文件。
+# 不要保存凭据、聊天记录、项目路径或其他运行状态。
+
+[desktop]
+appearanceTheme = "system"
+appearanceDarkCodeThemeId = "nord"
+appearanceLightCodeThemeId = "absolutely"
+sansFontSize = 14
+codeFontSize = 14
+usePointerCursors = false
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#7aa2f7"
+accentSource = "custom"
+contrast = 48
+ink = "#d8dee9"
+opaqueWindows = false
+surface = "#2e3440"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "\"JetBrains Mono\""
+
+[desktop.appearanceDarkChromeTheme.fonts.codeFace]
+family = "JetBrains Mono"
+fullName = "JetBrains Mono Regular"
+postscriptName = "JetBrainsMono-Regular"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#73daca"
+diffRemoved = "#bf616a"
+skill = "#bb9af7"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#cc7d5e"
+contrast = 45
+ink = "#2d2d2b"
+opaqueWindows = false
+surface = "#f9f9f7"
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = "\"JetBrains Mono\""
+
+[desktop.appearanceLightChromeTheme.fonts.codeFace]
+family = "JetBrains Mono"
+fullName = "JetBrains Mono Regular"
+postscriptName = "JetBrainsMono-Regular"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00c853"
+diffRemoved = "#ff5f38"
+skill = "#cc7d5e"

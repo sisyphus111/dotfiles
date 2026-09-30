@@ -47,3 +47,22 @@ To apply changes or restore on another Mac:
 
 After adjusting the theme in the app, copy these two entries back to the repository
 file. Keep subscriptions, proxy settings, logs, and other runtime data out of Git.
+
+## ChatGPT app appearance
+
+`.config/chatgpt/appearance.toml` stores the current ChatGPT macOS app appearance
+used by its Codex interface: system-following mode, dark and light themes,
+semantic colors, code highlighting, fonts, and font sizes. The dark theme uses
+the Nord base theme and syntax highlighting, customized with blue, purple, and
+teal accents and contrast set to 48. Both modes use JetBrains Mono Regular for code.
+
+This file is a source/backup fragment, not an automatically loaded configuration.
+Its header documents how to merge the appearance settings into
+`$CODEX_HOME/config.toml` (normally `~/.codex/config.toml`) after quitting the app
+and backing up that file. Preserve all unrelated settings; do not replace or
+symlink the full configuration. Install JetBrains Mono, including its Regular
+face, before restoring the theme.
+
+After changing appearance in the app, synchronize only the appearance settings
+back to this fragment. Keep credentials, chat history, project paths, and runtime
+state out of the repository.
