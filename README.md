@@ -1,6 +1,7 @@
 # dotfiles
 
-Personal macOS configuration files.
+Personal configuration files for macOS and Linux. Set up each app's files on
+the machines where you use it.
 
 ## Managed files
 
@@ -13,7 +14,7 @@ The active Starship configuration is linked from:
 ~/.config/starship.toml -> ~/dev/dotfiles/.config/starship.toml
 ```
 
-## Dependencies
+## Starship setup on macOS
 
 ```zsh
 brew install starship
@@ -25,6 +26,38 @@ Zsh initializes Starship with the following line in `~/.zshrc`:
 ```zsh
 eval "$(starship init zsh)"
 ```
+
+## Ghostty appearance on macOS and Linux
+
+`.config/ghostty/config.ghostty` sets the terminal theme, font size, and window
+padding. Skip this setup on machines without Ghostty.
+
+If you are starting with no Ghostty config under `${XDG_CONFIG_HOME:-$HOME/.config}`,
+run this from the repository root to link the shared settings:
+
+```sh
+ghostty_config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/ghostty"
+mkdir -p "$ghostty_config_dir"
+ln -s "$PWD/.config/ghostty/config.ghostty" "$ghostty_config_dir/config.ghostty"
+```
+
+If you already have an XDG Ghostty config, you can add a `config-file` entry
+pointing to the absolute path of the shared file. Ghostty reads the included
+file after the containing file.
+
+On macOS, `.config/ghostty/macos.ghostty` selects CaskaydiaMono Nerd Font Mono
+and integrates the tab bar into the title bar. After installing the font from
+the Homebrew command above, add this line to
+`~/Library/Application Support/com.mitchellh.ghostty/config.ghostty`, replacing
+`/path/to/dotfiles` with the absolute path to your checkout.
+
+```text
+config-file = /path/to/dotfiles/.config/ghostty/macos.ghostty
+```
+
+On Linux, Ghostty uses its default font with the shared config. If you have
+CaskaydiaMono installed there too, you can set `font-family` in your local
+Ghostty config.
 
 ## Clash Verge Rev theme
 
